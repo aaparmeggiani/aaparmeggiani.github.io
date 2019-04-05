@@ -5,11 +5,14 @@ metadata:
   namespace: default
 spec:
   containers:
-  - image: alpine
+  - name: alpine
+    image: alpine
     command:
       - /bin/sh
       - "-c"
       - "sleep 60m"
     imagePullPolicy: IfNotPresent
-    name: alpine
+    resources:
+      requests:
+        cpu: "10m"
   restartPolicy: Always
